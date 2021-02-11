@@ -84,10 +84,10 @@ export function fetchTasks(){
 
         api.fetchTasks()
             .then(resp=>{
-            //    setTimeout(() => {
-            //        dispatch(fetchTasksSucceeded(resp.data));
-            //    }, 2000);
-            throw new Error('FakeError: Unable to fetch tasks');
+                setTimeout(() => {
+                    dispatch(fetchTasksSucceeded(resp.data));
+                }, 2000);
+                //throw new Error('FakeError: Unable to fetch tasks');
             })
             .catch(err=>{
                 dispatch(fetchTasksFailed(err.message));
