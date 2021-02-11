@@ -10,7 +10,6 @@ import tasksReducer from './reducers'
 import { devToolsEnhancer } from 'redux-devtools-extension';
 import thunk from 'redux-thunk';
 import { composeWithDevTools } from 'redux-devtools-extension';
-import logger from './middleware/logger';
 
 
 const rootReducer= (state={}, action)=>{
@@ -21,7 +20,7 @@ const rootReducer= (state={}, action)=>{
 
 const store= createStore(
   rootReducer, 
-  composeWithDevTools(applyMiddleware(thunk, logger))
+  composeWithDevTools(applyMiddleware(thunk))
 );
 
 /*
